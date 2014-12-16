@@ -8,39 +8,49 @@ int main()
 	locale swedish("swedish");
 	locale::global(swedish);
 
-	//int numbers;
+	cout << "Skriv in ett femsiffrigt tal: " << endl;
 
-	cout << "Skriv in ett femsiffrigt tal: ";
-/*	cin >> numbers;
-
-	int lenght = 1;
+	int numbers;
+	const size_t SIZE = 5;
+	int numberArray[SIZE] = {0};
+	cin >> numbers;
+			int lenght = 1;
 	if(numbers > 0)
 	{
 		for(lenght = 0; numbers > 0; lenght++)
 			numbers = numbers / 10;
-	
 	}
-	cout << lenght;
 
 	if(lenght < 4 || lenght >5)
 	{
 			cout << "Ditt tal ska vara  5 siffror. Skriv in ett femsiffrigt tal: ";
 	cin >> numbers;
 	}
-	cout << "arrayen innehåller " << numberArray[0];*/
-	// Deklarera en array
-	int numbers;
-	const size_t SIZE = 5;
-	int x[SIZE] = {0};
-	cin >> numbers;
-
-	// Fyll arrayen
-	for(size_t idx = 0; idx < SIZE; idx++)
+	else if(lenght == 5)
 	{
-		x[idx] = numbers % 10;
-		numbers /= 10; //dödanummerrad eller eternitybreaker
-		cout << setw(4) << x[idx] << endl;
+		int reverse = 0;
+		int num = 0, lenght = numbers;
+		for(int i = 1; numbers !=0; i++)
+		{
+			num = numbers%10;
+			numbers = numbers/10;
+			reverse = num + (reverse*10);
+
+		}
+		if (reverse == lenght)
+		{
+			cout << "är ett palindrom";
+
+		}
+		else{
+			cout << "är inte";
+		}
+			
 	}
+
 	
+
+
+
 	return 0;
 }
