@@ -4,6 +4,12 @@ using namespace std;
 
 int main() 
 {
-		cout << "Hej";
-return 0;
+
+		for(int i = 32; i < 256; i++) {
+			cout << setw(4) << i << " " << char(i) << "\t";
+		}
+
+		cout << endl;
+		return 0; 
+
 }
